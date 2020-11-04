@@ -1,0 +1,300 @@
+@import '../break_point';
+
+.my-page-header-list {
+    display: none;
+
+    @include mq() {
+        display: flex;
+    }
+}
+
+/*スマホ版スライドメニュー
+--------------------------------------------------*/
+.slide-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    background-color: rgba(52, 144, 220, .8);
+    z-index: 100;
+    transform: translateX(100%);
+    transition: all .4s;
+
+    &.slide-open {
+        transform: translateX(0%);
+    }
+}
+
+.slide-menu-down {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: all .4s;
+
+    &.slide-open {
+        transform: translateX(0%);
+    }
+}
+
+.slide-menu-inner {
+    margin-top: 48px;
+}
+
+.slide-menu-item {
+
+    & + & {
+        margin-top: 24px;
+    }
+}
+
+.slide-menu-link {
+    color: #fff;
+    display: block;
+    font-size: 1em;
+    padding: 0.5em;
+
+    &:hover {
+        color: $primary-color;
+        background-color: #fff;
+    }
+}
+
+.menu-icon {
+    padding: 10px;
+    z-index: 999;
+  
+    &:hover {
+        cursor: pointer;
+    }
+  
+    span {
+        display: block;
+        width: 30px;
+        height: 2px;
+        
+        background-color: $font-color;
+        position: relative;
+        transition: all .4s;
+    }
+  
+    span:nth-child(1) {
+        top: 0;
+    }
+    span:nth-child(2) { 
+        margin: 8px 0;
+    }
+    span:nth-child(3) {
+        top: 0;
+    }
+  
+    &.slide-open {
+  
+        span {
+            background-color: #fff;
+        }
+  
+        span:nth-child(1) {
+            top: 10px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+  
+        span:nth-child(2) {
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+  
+        span:nth-child(3) {
+            top: -10px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+}
+/*--------------------------------------------------*/
+  
+
+.my_page_header {
+    padding-top: 80px;
+}
+
+.main-header-link {
+    background-color: #fff;
+    color: $primary-color;
+}
+
+.my_page_header_contents {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.my_page_head {
+    margin-bottom: 24px;
+}
+
+.my_img {
+    margin: auto;
+    width: 100px;
+    display: block;
+}
+
+.my_contents_item {
+
+    & + & {
+        margin-top: 12px;
+    }
+}
+
+.my_name_text {
+    font-size: 32px;
+}
+
+.my_email_text {
+    color: rgb(168, 166, 166);
+}
+
+.preview-link-wrap {
+    margin-top: 24px;
+}
+
+.preview-link {
+    display: inline-block;
+}
+
+.my_page_edit {
+    margin-top: 24px;
+}
+
+.my_header_nav_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my_header_nav_item {
+    width: 33.3333%;
+    text-align: center;
+    background-color: #fff;
+    border-top: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
+    transition: background-color .4s;
+
+    &.selected{
+        background-color: rgba(52, 144, 220, .3);
+    }
+
+    & + & {
+        border-left: 1px solid $primary-color;
+    }
+
+    &:hover {
+        background-color: rgba(52, 144, 220, .3);
+    }
+}
+
+.my_header_nav_link {
+    display: inline-block;
+    background-color: transparent;
+    color: $font-color;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 0.8em;
+
+    @include mq() {
+        padding: 2em;
+        font-size: 1em;
+    }
+}
+
+.my_page_edit_list {
+    margin-top: 24px;
+}
+
+.participant {
+
+    &.preview {
+        margin-bottom: 32px;
+    }
+}
+
+.preview-submit-btn-wrap {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.account-delete-page {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.account-delete-contents {
+    width: 80%;
+    max-width: 800px;
+    padding: 24px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    text-align: center;
+
+    @include mq() {
+        padding: 40px;
+    }
+}
+
+.account-delete-attention {
+    font-size: 0.8em;
+
+    @include mq() {
+        font-size: 1.8em;
+        line-height: 1.7em;
+    }
+
+    span {
+        color: #ff0000;
+    }
+}
+
+.account-delete-submit-wrap {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.account-delete-submit {
+    font-size: 0.6em;
+    display: block;
+    padding: 0.5em;
+
+    @include mq() {
+        font-size: 1.5em;
+    }
+}
+
+.account-delete-cancel {
+    font-size: 0.6em;
+    display: block;
+    padding: 0.5em;
+
+    @include mq() {
+        font-size: 1.5em;
+    }
+}
+
+.open-delete {
+    display: block;
+}

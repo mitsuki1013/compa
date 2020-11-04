@@ -1,0 +1,77 @@
+@import '../break_point';
+
+.auth-nav {
+    display: block;
+
+    &.auth {
+        padding: 10px;
+
+        @include mq() {
+            padding: 18px;
+        }
+    }
+}
+
+.container {
+    &.auth {
+            flex-wrap: nowrap;
+            width: auto;
+            margin: auto;
+            padding: 0 15px;
+            
+        @include mq() {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+    }
+}
+
+.collapse {
+    &.open {
+        display: block;
+    }
+}
+
+.navbar-brand {
+
+    &.auth {
+        display: block;
+        font-size: 24px;
+
+        @include mq(){
+            font-size: 36px;
+        }
+    }
+}
+
+.nav-link {
+
+    &.auth {
+        font-size: 12px;
+        padding: 8px;
+
+        @include mq(){
+            font-size: 18px;
+        }
+    }
+}
+
+.auth-navbar-nav {
+    flex-direction: row;
+}
+
+.auth-nav {
+    padding: 18px 0;
+}
+
+.navbar-brand {
+    font-family: $top-title;
+    font-size: 2em;
+    color: $font-color;
+
+    i {
+        margin-right: 12px;
+        font-size: .6em;
+    }
+}

@@ -1,0 +1,84 @@
+@import '../break_point';
+
+.main-main {
+    padding-top: 55px;
+
+    @include mq() {
+        padding-top: 100px;
+    }
+}
+
+.main-header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 0.6em 0;
+
+    @include mq() {
+        padding: 1em 0;
+    }
+}
+
+.main-header-title-link {
+    color: $font-color;
+    display: block;
+    font-family: $top-title;
+    padding: .2em;
+    font-size: 1.8em;
+
+    @include mq() {
+        font-size: 2.7em;
+    }
+}
+
+.main-header-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-header-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.main-header-item {
+    margin-left: 2em;
+    margin-left: 0.5em;
+
+    @include mq() {
+        margin-left: 2em;
+    }
+}
+
+.main-header-link {
+    display: block;
+    padding: 0.5em 0.2em;
+    position: relative;
+    font-size: .8em;
+
+    @include mq() {
+        font-size: 1em;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+    
+    &::after {
+        content: '';
+        width: 0%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $primary-color;
+        transition: all .4s;
+    }
+}

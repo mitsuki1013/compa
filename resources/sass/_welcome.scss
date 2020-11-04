@@ -1,0 +1,74 @@
+@import 'break_point';
+
+.welcome-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 100;
+}
+
+.welcome_header_inner {
+    text-align: right;
+}
+
+.welcome-header-link {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 0.5em;
+
+    & + & {
+        margin-left: 24px;
+    }
+}
+
+.welcome-title {
+    font-family: $top-title;
+    font-size: 5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 100;
+}
+
+.welcome-main {
+    height: 100vh;
+    background: url('../img/compa-mobile.png');
+    background-size: cover;
+    position: relative;
+    
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.welcome-header-link {
+
+    &.welcome {
+        font-size: 12px;
+
+        @include mq() {
+            font-size: 24px;
+        }
+    }
+}
+
+.util-main-title {
+
+    &.welcome {
+        font-size: 60px;
+
+        @include mq() {
+            font-size: 80px;
+        }
+    }
+}

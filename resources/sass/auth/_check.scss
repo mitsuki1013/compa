@@ -1,0 +1,19 @@
+@import '../break_point';
+
+.check-container {
+    margin-top: 60px;
+}
+
+.check-form-submit {
+    text-align: center;
+}
+
+.participant {
+    &.check {
+        margin-bottom: 48px;
+        
+        &:hover {
+            transform: scale(1, 1);
+        }
+    }
+}

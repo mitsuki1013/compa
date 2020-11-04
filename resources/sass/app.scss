@@ -1,0 +1,44 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+// reset.scss
+@import 'reset';
+
+// setting
+@import 'var';
+@import 'util';
+@import 'break_point';
+
+// welcome
+@import 'welcome';
+
+// layouts
+@import 'main/main.layout';
+@import 'auth/auth.layout';
+
+// auth
+@import 'auth/auth';
+@import 'auth/profile';
+@import 'auth/check';
+
+// main
+@import 'main/main';
+@import 'main/mainLocation';
+
+// my_page
+@import 'my_page/my_page';
+
+// chat
+@import 'chat/chat';

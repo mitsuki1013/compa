@@ -1,0 +1,47 @@
+@import 'break_point';
+
+.container {
+    padding: 0 15px;
+    margin: auto;
+
+    @include mq() {
+        width: 720px;
+    }
+    
+    @include mq(lg) {
+        width: 960px;
+    }
+
+    @include mq(xl) {
+        width: 1140px;
+    }
+    
+}
+
+/*-------------------------------------------------------
+util
+/*-----------------------------------------------------*/
+
+body {
+    line-height: 1.5em;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+textarea, input, button {
+    &:focus {
+        outline: transparent;
+    }
+}
