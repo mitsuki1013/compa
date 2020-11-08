@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="profile-item">
                                     <dt class="profile-head">
-                                        <p class="profile-label">性別<span>必須</span></p>
+                                        <p class="profile-label"><span>必須</span>性別</p>
                                         @if($errors->has('gender'))
                                         <div class="">
                                             <strong class="text-danger profile-label">{{ $errors->first('gender') }}</strong>
@@ -58,7 +58,7 @@
                                 
                                 <div class="form-group profile-item">
                                     <dt class="profile-head">
-                                        <label for="age" class="profile-label">年齢<span>必須</span></label>
+                                        <label for="age" class="profile-label"><span>必須</span>年齢</label>
                                         @if($errors->has('age'))
                                         <div class="">
                                             <strong class="text-danger profile-label">{{ $errors->first('age') }}</strong>
@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="form-group profile-item">
                                     <dt class="profile-head">
-                                        <label for="location" class="profile-label">合コンする場所<span>必須</span></label>
+                                        <label for="location" class="profile-label"><span>必須</span>合コンする場所</label>
                                         @if($errors->has('location'))
                                         <div class="">
                                             <strong class="text-danger profile-label">{{ $errors->first('location') }}</strong>
@@ -211,7 +211,7 @@
                                 </div>
                                 <div class="form-group profile-item">
                                     <dt class="profile-head">
-                                        <label for="number_people" class="profile-label">人数（どちらか選択）<span>必須</span></label>
+                                        <label for="number_people" class="profile-label"><span>必須</span>参加人数（どちらか選択）</label>
                                         @if($errors->has('number_peoples'))
                                         <div class="">
                                             <strong class="text-danger profile-label">{{ $errors->first('number_peoples') }}</strong>
@@ -219,7 +219,7 @@
                                         @endif
                                     </dt>
                                     <dd class="profile-body">
-                                        <div class="number-people-wrapper d-flex">
+                                        <div class="number-people-wrapper profile d-flex">
                                             <input type="hidden" name="number_peoples">
                                             <select name="number_people_first" class="form-control profile-label" id="number_people">
                                                 <option Value="" selected>選択してください</option>
@@ -248,9 +248,9 @@
                                                 <option value="9" @if (old('number_people_second') == '9') selected @endif>9名</option>
                                                 <option value="10" @if (old('number_people_second') == '10') selected @endif>10名</option>
                                                 <option value="11" @if (old('number_people_second') == '11') selected @endif>10名以上</option>
-                                        </select>
+                                            </select>
                                         </div>
-                                        <div class="number-people-wrapper d-flex">
+                                        <div class="number-people-wrapper profile d-flex">
                                             <select name="number_people_single" class="form-control profile-label" id="number_people">
                                                 <option value="" selected>選択してください</option>
                                                 <option value="1" @if (old('number_people_single') == '1') selected @endif>1名</option>

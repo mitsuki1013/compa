@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="participant-contents-item">
                                         <dt class="participant-contents-head @if ($user->gender === 0) man @endif">
-                                            <p>人数</p>
+                                            <p>参加人数</p>
                                         </dt>
                                         <dd class="participant-contents-body">
                                             <p>{{ $user->number_people }}</p>

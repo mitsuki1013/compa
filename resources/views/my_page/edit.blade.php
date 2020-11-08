@@ -253,7 +253,7 @@
                                             @endif
                                         </dt>
                                         <dd class="profile-body">
-                                            <div class="number-people-wrapper d-flex">
+                                            <div class="number-people-wrapper profile d-flex">
                                                 <input type="hidden" name="number_peoples">
                                                 <select name="number_people_first" class="form-control" id="number_people">
                                                     <option Value="" selected>選択してください</option>
@@ -284,7 +284,7 @@
                                                     <option value="11" @if($people_array[1] === '10名以上') selected @endif>10名以上</option>
                                             </select>
                                             </div>
-                                            <div class="number-people-wrapper d-flex">
+                                            <div class="number-people-wrapper profile d-flex">
                                                 <select name="number_people_single" class="form-control" id="number_people">
                                                     <option value="" selected>選択してください</option>
                                                     <option value="1" @if($people_array === '1名') selected @endif>1名</option>

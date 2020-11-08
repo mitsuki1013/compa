@@ -32,7 +32,10 @@
             </div>
         </header>
         <main class="welcome-main">
-            <h1 class="welcome-title util-main-title welcome">compa!</h1>
+            <div class="welcome-title-wrap">
+                <h1 class="welcome-title util-main-title welcome">compa!</h1>
+                <p class="welcome-sub-text">ー合コンができるマッチングアプリー</p>
+            </div>
         </main>
     </body>
 </html>

@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group profile-item">
                         <dt class="profile-head">
-                            <label for="number_people">人数</label>
+                            <label for="number_people">参加人数</label>
                         </dt>
                         <dd class="profile-body">
                             <div class="number-people-wrapper d-flex">
@@ -312,7 +312,7 @@
                                 <dl class="participant-contents-list">
                                     <div class="participant-contents-item">
                                         <dt class="participant-contents-head @if ($user->gender === 0) man @endif">
-                                            <p>人数</p>
+                                            <p>参加人数</p>
                                         </dt>
                                         <dd class="participant-contents-body">
                                             <p>{{ $user->number_people }}</p>
