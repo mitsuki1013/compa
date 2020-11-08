@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <!-- css -->
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
     </head>
     <body class="welcome-body">
         <header class="welcome-header">

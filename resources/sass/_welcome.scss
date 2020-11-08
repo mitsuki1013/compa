@@ -23,15 +23,25 @@
     }
 }
 
-.welcome-title {
-    font-family: $top-title;
-    font-size: 5em;
+.welcome-title-wrap {
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
     z-index: 100;
+}
+
+.welcome-title {
+    font-family: $top-title;
+    font-size: 5em;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.welcome-sub-text {
+    color: #fff;
+    font-size: 0.8em;
 }
 
 .welcome-main {
