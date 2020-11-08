@@ -21,7 +21,7 @@
 </head>
 <body>
     <main class="main-main">
-        <article class="participant preview">
+        <article class="participant preview @if ($data['gender'] == '0') man @endif">
             <p class="participant-name @if ($data['gender'] == '0') man @endif">{{ $data['name'] }} （{{ $check->checkAge($data['age']) }}）</p>
             <div href="" class="participant-link">
                 <div class="participant-head">

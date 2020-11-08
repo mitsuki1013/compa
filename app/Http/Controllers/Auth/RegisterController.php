@@ -104,7 +104,7 @@ class RegisterController extends Controller
         if ($imgFile = $request->file('profile_img') === null) {
 
             // デフォルト画像を設置
-            $profile_img = 'storage/profile_img/no-img/no-image.png';
+            $profile_img = 'no-img/no-image.png';
         }
 
         // $days（配列）を横一列の文字列に変換するための記述

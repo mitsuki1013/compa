@@ -18,12 +18,12 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name('male'),
-        'email' => $faker->unique()->email,
-        'profile_img' => 'storage/profile_img/no-img/no-image.png',
+        'name' => $faker->name(),
+        'email' => $faker->unique()->safeEmail,
+        'profile_img' => 'no-img/no-image.png',
         'password' => Hash::make('12345678'), 
         'pr_comment' => $faker->realText(50),
-        'gender' => 0,
+        'gender' => $faker->numberBetween(0,1),
         'age' => $faker->numberBetween(1,41),
         'location' => $faker->numberBetween(1,47),
         'number_people' => $faker->numberBetween(1,10),
@@ -101,7 +101,7 @@ $factory->define(User::class, function (Faker $faker) {
             '木',
         ]),
         'sake' => $faker->numberBetween(0,2),
-        'tag_1' => $faker->numberBetween(7,12),
+        'tag_1' => $faker->numberBetween(1,12),
         'tag_2' => $faker->numberBetween(1,5),
         'tag_3' => $faker->numberBetween(1,5),
         'remember_token' => Str::random(10),

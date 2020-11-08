@@ -4,8 +4,8 @@
 
 <div class="main-contents">
     <div class="container main-contents-container check-container">
-        <article class="participant check">
-            <p class="participant-name @if ($data['gender'] == '0') man @endif">{{ $data['name'] }}  --- {{ $check->checkAge($data['age']) }} ---</p>
+        <article class="participant check @if ($data['gender'] == '0') man @endif">
+            <p class="participant-name @if ($data['gender'] == '0') man @endif">{{ $data['name'] }}（{{ $check->checkAge($data['age']) }}）</p>
             <div href="" class="participant-link">
                 <div class="participant-head">
                     <div class="participant-img-wrapper">

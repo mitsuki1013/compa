@@ -25,7 +25,7 @@
                                     </dt>
                                     <dd class="profile-body">
                                         <div class="profile-image-preview-wrap">
-                                            <img src="{{ asset('storage/profile_img/no-img/no-image.png') }}" alt="" class="profile-image-preview">
+                                            <img src="{{ asset('no-img/no-image.png') }}" alt="" class="profile-image-preview">
                                         </div>
                                         <input name="profile_img" type="file" class="form-control-file profile-label" id="profile_img">
                                     </dd>

@@ -274,8 +274,8 @@
             <li class="participant-item">
                 
                 @foreach ($users as $user)
-                <article class="participant ">
-                    <p class="participant-name @if ($user->gender === 0) man @endif">{{ $user->name }}  --- {{ $check->checkAge($user->age) }} ---</p>
+                <article class="participant @if ($user->gender === 0) man @endif">
+                    <p class="participant-name @if ($user->gender === 0) man @endif">{{ $user->name }}（{{ $check->checkAge($user->age) }}）</p>
                     @if ($user->id !== Auth::user()->id)
                     @if ($all_user::find(Auth::id())->isFavoriting($user->id))
                     <form class="favorite_form" action="{{ route('main.favorite', ['id' => $user->id]) }}" method="POST" data-id="{{ $user->id }}">

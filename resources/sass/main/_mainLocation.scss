@@ -198,12 +198,15 @@
     max-width: 700px;
     margin: auto;
     padding: 24px 12px 12px 8px;
-    border: 1px solid transparent;
+    border: 1px solid $womans-color;
     margin-bottom: 120px;
     border-radius: 12px;
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     transition: transform .4s;
+
+    &.man {
+        border: 1px solid $mans-color;
+    }
 
     @include mq() {
         padding: 40px 40px 40px 24px;
@@ -222,7 +225,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    transform: translate(50%, -50%);
+    transform: translateY(-50%);
     padding: 0 .5em;
     z-index: 1;
     

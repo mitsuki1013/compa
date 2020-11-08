@@ -107,7 +107,7 @@
         お気に入りしている人
         ------------------->
         @foreach ($users as $user)
-        <article class="participant">
+        <article class="participant @if ($user->gender === 0) man @endif">
             <p class="participant-name @if ($user->gender === 0) man @endif">{{ $user->name }} （{{ $check->checkAge($user->age) }}）</p>
             @if ($user->id !== Auth::user()->id)
             @if ($all_user::find(Auth::id())->isFavoriting($user->id))
