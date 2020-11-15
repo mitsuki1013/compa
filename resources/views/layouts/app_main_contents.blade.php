@@ -85,17 +85,17 @@
                             <div class="number-people-wrapper d-flex">
                                 <select name="number_people" class="form-control" id="number_people">
                                     <option value="" selected>選択してください</option>
-                                    <option value="1" @if($data['number_people'] === '1') selected @endif>1名</option>
-                                    <option value="2" @if($data['number_people'] === '2') selected @endif>2名</option>
-                                    <option value="3" @if($data['number_people'] === '3') selected @endif>3名</option>
-                                    <option value="4" @if($data['number_people'] === '4') selected @endif>4名</option>
-                                    <option value="5" @if($data['number_people'] === '5') selected @endif>5名</option>
-                                    <option value="6" @if($data['number_people'] === '6') selected @endif>6名</option>
-                                    <option value="7" @if($data['number_people'] === '7') selected @endif>7名</option>
-                                    <option value="8" @if($data['number_people'] === '8') selected @endif>8名</option>
-                                    <option value="9" @if($data['number_people'] === '9') selected @endif>9名</option>
-                                    <option value="10" @if($data['number_people'] === '10') selected @endif>10名</option>
-                                    <option value="11" @if($data['number_people'] === '11') selected @endif>10名以上</option>
+                                    <option value="1名" @if($data['number_people'] === '1名') selected @endif>1名</option>
+                                    <option value="2名" @if($data['number_people'] === '2名') selected @endif>2名</option>
+                                    <option value="3名" @if($data['number_people'] === '3名') selected @endif>3名</option>
+                                    <option value="4名" @if($data['number_people'] === '4名') selected @endif>4名</option>
+                                    <option value="5名" @if($data['number_people'] === '5名') selected @endif>5名</option>
+                                    <option value="6名" @if($data['number_people'] === '6名') selected @endif>6名</option>
+                                    <option value="7名" @if($data['number_people'] === '7名') selected @endif>7名</option>
+                                    <option value="8名" @if($data['number_people'] === '8名') selected @endif>8名</option>
+                                    <option value="9名" @if($data['number_people'] === '9名') selected @endif>9名</option>
+                                    <option value="10名" @if($data['number_people'] === '10名') selected @endif>10名</option>
+                                    <option value="10名以上" @if($data['number_people'] === '10名以上') selected @endif>10名以上</option>
                                 </select>
                             </div>
                         </dd>

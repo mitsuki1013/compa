@@ -33,12 +33,7 @@ class SearchList
                 'val' => $data['smoking']
             ];
         }
-        if (($data['number_people']) !== null) {
-            $values[] = [
-                'name' => 'number_people',
-                'val' => $data['number_people']
-            ];
-        }
+        
         if (($data['sake']) !== null) {
             $values[] = [
                 'name' => 'sake',
@@ -70,8 +65,14 @@ class SearchList
 
     public static function CheckSearchFuzzy($data)
     {
-
         $values = [];
+
+        if (($data['number_people']) !== null) {
+            $values[] = [
+                'name' => 'number_people',
+                'val' => $data['number_people']
+            ];
+        }
 
         if (($data['days']) !== null) {
             foreach ($data['days'] as $day) {
