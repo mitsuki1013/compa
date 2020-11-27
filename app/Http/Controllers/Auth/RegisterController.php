@@ -122,11 +122,11 @@ class RegisterController extends Controller
         if ($request->input('number_people_first') === null && $request->input('number_people_second') === null) {
 
             // 固定人数タイプを表示
-            $number_people = CheckForm::CheckNumberPeople($request->input('number_people_single')); 
+            $number_people = $check->CheckNumberPeople($request->input('number_people_single')); 
 
         // 曖昧人数指定タイプの入力欄のうち、一つでも記入があれば、それを表示
         } else {
-            $number_people = CheckForm::CheckNumberPeople($request->input('number_people_first')) . '〜' . CheckForm::CheckNumberPeople($request->input('number_people_second'));
+            $number_people = $check->CheckNumberPeople($request->input('number_people_first')) . '〜' . CheckForm::CheckNumberPeople($request->input('number_people_second'));
         }
 
         // profile.blade.phpで送信された情報を$data内で一括管理
