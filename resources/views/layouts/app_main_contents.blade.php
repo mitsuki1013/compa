@@ -9,7 +9,8 @@
     <div class="container">
         <p class="main-select-top-title">地域選択</p>
         <div class="select-list-wrapper">
-            <form class="location-select-form" method="GET" action="@yield('route')">
+            <!-- <form class="location-select-form" method="GET" action="@yield('route')"> -->
+            <form class="location-select-form" method="GET" action="{{ route('main.location') }}">
                 @yield('location-select-item')
                 <!-- 地域変更の際に、検索条件を保持したままであるための記述 -->
                 <input type="hidden" name="gender" value="{{ $data['gender'] }}">
@@ -27,6 +28,7 @@
                 <input type="hidden" name="tag_1" value="{{ $data['tag_1'] }}">
                 <input type="hidden" name="tag_2" value="{{ $data['tag_2'] }}">
                 <input type="hidden" name="tag_3" value="{{ $data['tag_3'] }}">
+                <input type="hidden" name="main_location" value="{{ $data['main_location'] }}">
             </form>
         </div>
     </div>
@@ -40,7 +42,7 @@
     <!-- scssはprofile.scss参照 -->
     <div class="profile-form select-form">
         <div class="container row d-flex justify-content-center">
-            <form class="col-md-6" method="GET" action="@yield('route')">
+            <form class="col-md-6" method="GET" action="{{ route('main.location') }}">
                 <dl class="profile-list">
                     <div class="form-group profile-item">
                         <dt class="profile-head">
@@ -220,6 +222,7 @@
                 <!-- 詳細条件設定後も、選択された地域の情報を保持するための記述 -->
                 <input type="hidden" name="location" value="{{ $data['location'] }}">
                 <input type="hidden" name="gender" value="{{ $data['gender'] }}">
+                <input type="hidden" name="main_location" value="{{ $data['main_location'] }}">
             </form>
         </div>
     </div>
@@ -229,11 +232,12 @@
     ------------>
     <div class="select-clear">
         <div class="container row d-flex justify-content-center">
-            <form class="col-md-6" method="GET" action="@yield('route')">
+            <form class="col-md-6" method="GET" action="{{ route('main.location') }}">
                 <button type="submit" class="search-reset-btn">検索条件をクリアする</button>
                 <!-- 現在見ている性別及び、場所の条件だけは保持したまま検索条件を削除する -->
                 <input type="hidden" name="gender" value="{{ $data['gender'] }}">
                 <input type="hidden" name="location" value="{{ $data['location'] }}">
+                <input type="hidden" name="main_location" value="{{ $data['main_location'] }}">
             </form>
         </div>
     </div>
@@ -245,7 +249,7 @@
     ----------------->
     <div class="main-select-gender">
         <div class="container row d-flex justify-content-center">
-            <form class="select-gender-form col-md-6" method="GET" action="@yield('route')">
+            <form class="select-gender-form col-md-6" method="GET" action="{{ route('main.location') }}">
                 <!-- クリックされたボタンに「selected」クラスを付与することで、何が選択されているかわかりやすくするための記述 -->
                 <!-- 男女のいずれかがクリックされた時、または初期のデフォルトでの表示設定（ユーザーが男性なら女性、女性なら男性） -->
                 <button type="submit" class="main-select-gender-btn main-select-man @if ($data['gender'] == '0' || Auth::user()->gender === 1 && $data['gender'] === null) selected @endif" value="0" name="gender">男性</button>
@@ -266,6 +270,7 @@
                 <input type="hidden" name="tag_1" value="{{ $data['tag_1'] }}">
                 <input type="hidden" name="tag_2" value="{{ $data['tag_2'] }}">
                 <input type="hidden" name="tag_3" value="{{ $data['tag_3'] }}">
+                <input type="hidden" name="main_location" value="{{ $data['main_location'] }}">
             </form>
         </div>
     </div>
@@ -365,7 +370,7 @@
         </ul>
 
         <div class="container page">
-            {!!$users->appends(['location'=>$data['location'], 'gender'=>$data['gender'], 'hobby'=>$data['hobby'], 'job'=>$data['job'], 'smoking'=>$data['smoking'], 'number_people'=>$data['number_people'], 'sake'=>$data['sake'], 'tag_1'=>$data['tag_1'], 'tag_2'=>$data['tag_2'], 'tag_3'=>$data['tag_3'], 'day'=>$data['days']])->render()!!}
+            {!!$users->appends(['location'=>$data['location'], 'main_location'=>$data['main_location'], 'gender'=>$data['gender'], 'hobby'=>$data['hobby'], 'job'=>$data['job'], 'smoking'=>$data['smoking'], 'number_people'=>$data['number_people'], 'sake'=>$data['sake'], 'tag_1'=>$data['tag_1'], 'tag_2'=>$data['tag_2'], 'tag_3'=>$data['tag_3'], 'day'=>$data['days']])->render()!!}
         </div>
 
     </div>

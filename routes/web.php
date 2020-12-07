@@ -40,12 +40,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // メイン画面
 Route::group(['prefix' => 'main', 'middleware' => 'auth'], function() {
     Route::get('main', 'MainController@main')->name('main.main');
-    Route::get('location1', 'MainController@location1')->name('main.location1');
-    Route::get('location2', 'MainController@location2')->name('main.location2');
-    Route::get('location3', 'MainController@location3')->name('main.location3');
-    Route::get('location4', 'MainController@location4')->name('main.location4');
-    Route::get('location5', 'MainController@location5')->name('main.location5');
-    Route::get('location6', 'MainController@location6')->name('main.location6');
+    Route::get('location', 'MainController@location')->name('main.location');
     Route::get('show/{id}', 'MainController@show')->name('main.show');
     Route::post('favorite/{id}', 'MainController@favorite')->name('main.favorite');
     Route::post('unfavorite/{id}', 'MainController@unfavorite')->name('main.unfavorite');
