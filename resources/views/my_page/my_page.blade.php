@@ -97,12 +97,16 @@
                 <li class="my_header_nav_item @if ($request['users'] == '2') selected @endif">
                     <button class="my_header_nav_link" type="submit" name="users" value="2">マッチ</button>
                 </li>
+                <li class="my_header_nav_item @if ($request['users'] == '3') selected @endif">
+                    <button class="my_header_nav_link" type="submit" name="users" value="3">メッセージ</button>
+                </li>
             </ul>
         </form>
     </div>
 
 
     <main class="main-main">
+        @if ($request['users'] == '0' || $request['users'] == '1' || $request['users'] == '2')
         @foreach ($users as $user)
         <article class="participant @if ($user->gender === 0) man @endif">
             <p class="participant-name @if ($user->gender === 0) man @endif">{{ $user->name }} （{{ $check->checkAge($user->age) }}）</p>
@@ -192,6 +196,29 @@
             </a>
         </article>
         @endforeach
+        @endif
+
+        @if ($request['users'] == '3')
+        <div class="dm-wrap">
+            <div class="container">
+                <ul class="dm-list">
+                    @foreach ($chat_users as $chat_user)
+                    <li class="dm-item">
+                        <a href="{{ route('chat.chat', ['id' => $chat_user->id]) }}" class="dm-link">
+                            <div class="dm-left">
+                                <div class="dm-icon">
+                                    <img src="{{ asset($chat_user->profile_img) }}" alt="{{ $chat_user->name }}">
+                                </div>
+                                <div class="dm-name">{{ $chat_user->name }}</div>
+                            </div>
+                            <div class="dm-right"></div>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        @endif
     </main>
 
     <div class="account-delete-page">

@@ -335,12 +335,12 @@
                                     <dd class="profile-body">
                                         <select name="tag_1" class="form-control profile-label" id="tag_1" value="">
                                             <option value="">選択してください</option>
-                                            <option class="option-woman" value="1" hidden @if (old('tag_1') == '1') selected @endif>おしとやか系</option>
-                                            <option class="option-woman" value="2" hidden @if (old('tag_1') == '2') selected @endif>綺麗め系</option>
-                                            <option class="option-woman" value="3" hidden @if (old('tag_1') == '3') selected @endif>可愛い系</option>
-                                            <option class="option-woman" value="4" hidden @if (old('tag_1') == '4') selected @endif>真面目系</option>
-                                            <option class="option-woman" value="5" hidden @if (old('tag_1') == '5') selected @endif>ギャル系</option>
-                                            <option class="option-woman" value="6" hidden @if (old('tag_1') == '6') selected @endif>地雷系</option>
+                                            <option class="option-woman" value="1" @if (old('tag_1') == '1') selected @endif>おしとやか系</option>
+                                            <option class="option-woman" value="2" @if (old('tag_1') == '2') selected @endif>綺麗め系</option>
+                                            <option class="option-woman" value="3" @if (old('tag_1') == '3') selected @endif>可愛い系</option>
+                                            <option class="option-woman" value="4" @if (old('tag_1') == '4') selected @endif>真面目系</option>
+                                            <option class="option-woman" value="5" @if (old('tag_1') == '5') selected @endif>ギャル系</option>
+                                            <option class="option-woman" value="6" @if (old('tag_1') == '6') selected @endif>地雷系</option>
                                             <option class="option-man" value="7" @if (old('tag_1') == '7') selected @endif>イケメン系</option>
                                             <option class="option-man" value="8" @if (old('tag_1') == '8') selected @endif>ダンディー系</option>
                                             <option class="option-man" value="9" @if (old('tag_1') == '9') selected @endif>塩顔系</option>

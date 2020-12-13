@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CheckForm\CheckForm;
 use App\Models\User;
+use App\Models\Chat;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateUserRequest;
@@ -41,7 +42,7 @@ class MyPageController extends Controller
         }
 
         // マッチした人を取得
-        if (!empty($value) && $value === '2') {
+        if (!empty($value) && $value === '2' || $value === '3') {
             // (詳細)
             // 一度お気に入りしてくれている人をfavoriters_usersで取得
             $favoriters_users = 
@@ -55,7 +56,7 @@ class MyPageController extends Controller
             if ($favoriters_users->isEmpty()) {
                 $query->where('favorited_id', '=', 0);
             } else {
-                foreach($favoriters_users as $favoriters_user) {
+                foreach ($favoriters_users as $favoriters_user) {
                     // 二行目からorWhere()でループするようにメソッドチェーンを設定
                     $where = (!$i) ? 'where' : 'orWhere';
                     $i++;
@@ -66,10 +67,41 @@ class MyPageController extends Controller
                 }
             }            
         }
-        
+
         $users = $query->get();
 
-        return view('my_page.my_page', compact('user', 'all_user', 'check', 'users', 'request'));
+
+        // チャットページ専用
+        if (!empty($value) && $value === '3') {
+            // (詳細)
+            // 一度お気に入りしてくれている人をfavoriters_usersで取得
+            $favoriters_users = 
+            $user->favoriters()->get();
+
+            // お気に入りした人の中から自分のことをお気に入りしてくれている人のみを取得する記述
+            $query = 
+            $user->favorites();
+            $i = 0;
+
+            if ($favoriters_users->isEmpty()) {
+                $query->where('favorited_id', '=', 0);
+            } else {
+                foreach ($favoriters_users as $favoriters_user) {
+                    // 二行目からorWhere()でループするようにメソッドチェーンを設定
+                    $where = (!$i) ? 'where' : 'orWhere';
+                    $i++;
+                    // ここでお気に入りした人の中から自分のことをお気に入りしてくれている人のみを取得
+                    $query
+                    ->$where('favorited_id', '=', $favoriters_user->id)
+                    ->where('favoriting_id', '=', $user->id);
+                }
+            }            
+        }
+
+        // チャット可能なユーザーの取得
+        $chat_users = $query->get();
+
+        return view('my_page.my_page', compact('user', 'all_user', 'check', 'users', 'chat_users', 'request'));
     }
 
     /**

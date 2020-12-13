@@ -19,13 +19,13 @@ class MainController extends Controller
     }
 
     /**
-     * main.location1
+     * main.location
      * 
      * 
      */
     public function location(Request $request)
     {
-
+        // 全ユーザーの取得
         $all_user = new User;
 
         // CheckForm（valueや、DBに格納された値を文字列として表示するためのクラス）
@@ -53,39 +53,41 @@ class MainController extends Controller
             'tag_3' => $request->input('tag_3'),
         ];
 
-        // 関東のデータをクエリビルダで選出
-        if ($data['main_location'] == '1') {
-            $users = DB::table('users')
-            ->where('location', '>=', 17)
-            ->where('location', '<=', 24);
-        }
-        if ($data['main_location'] == '2') {
-            $users = DB::table('users')
-            ->where('location', '>=', 25)
-            ->where('location', '<=', 30);
-        }
-        if ($data['main_location'] == '3') {
-            $users = DB::table('users')
-            ->where('location', '>=', 8)
-            ->where('location', '<=', 16);
-        }
-        if ($data['main_location'] == '4') {
-            $users = DB::table('users')
-            ->where('location', '>=', 40)
-            ->where('location', '<=', 47);
-        }
-        if ($data['main_location'] == '5') {
-            $users = DB::table('users')
-            ->where('location', '>=', 1)
-            ->where('location', '<=', 7);
-        }
-        if ($data['main_location'] == '6') {
-            $users = DB::table('users')
-            ->where('location', '>=', 31)
-            ->where('location', '<=', 39);
+        // それぞれの地域別データをクエリビルダで選出
+        if ($data['main_location']  !== null) {
+            
+            if ($data['main_location'] == '1') {
+                $users = DB::table('users')
+                ->where('location', '>=', 17)
+                ->where('location', '<=', 24);
+            }
+            if ($data['main_location'] == '2') {
+                $users = DB::table('users')
+                ->where('location', '>=', 25)
+                ->where('location', '<=', 30);
+            }
+            if ($data['main_location'] == '3') {
+                $users = DB::table('users')
+                ->where('location', '>=', 8)
+                ->where('location', '<=', 16);
+            }
+            if ($data['main_location'] == '4') {
+                $users = DB::table('users')
+                ->where('location', '>=', 40)
+                ->where('location', '<=', 47);
+            }
+            if ($data['main_location'] == '5') {
+                $users = DB::table('users')
+                ->where('location', '>=', 1)
+                ->where('location', '<=', 7);
+            }
+            if ($data['main_location'] == '6') {
+                $users = DB::table('users')
+                ->where('location', '>=', 31)
+                ->where('location', '<=', 39);
+            }
         }
         
-
         // 男女未選択の際、ユーザーが男の場合->デフォルトで女を表示
         if ($data['gender'] === null && $user->gender === 0) {
             $users->where('gender', '=', 1);
@@ -114,6 +116,17 @@ class MainController extends Controller
 
 
         return view('main.location', compact('users', 'check', 'data', 'all_user'));
+    }
+
+    public function show($id) 
+    {
+        $check = new CheckForm;
+
+        $all_user = new User;
+
+        $user = User::find($id);
+
+        return view('main.show', compact('user', 'check', 'all_user'));
     }
 
     // お気に入り
